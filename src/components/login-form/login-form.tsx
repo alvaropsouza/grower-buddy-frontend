@@ -1,44 +1,41 @@
-import { Typography, TextField, Divider } from "@mui/material";
-import { Button } from "@mui/material";
 import Image from "next/image";
 
 export default function LoginForm() {
   return (
-    <div className="flex-grow-1 flex flex-col items-center justify-center bg-[#f9f9f9] p-5">
+    <div className="flex flex-col items-center justify-center rounded-md bg-[#f9f9f9] p-8">
       <Image
         src="/logo.png"
         alt=""
-        width={250}
-        height={250}
-        className="m-10 flex select-none rounded-lg"
+        width={280}
+        height={0}
+        style={{
+          height: "auto",
+        }}
+        className="mx-10 mb-9 mt-5 flex select-none rounded-lg"
       />
-      <div>
-        <TextField label="Email" type="email" id="email " className="m-1" />
-        <TextField
-          label="Password"
-          type="password"
-          id="password "
-          className="m-1"
-        />
-        <div className="m mx-5 flex justify-end">
-          <Typography
-            variant="subtitle2"
-            className="cursor-pointer text-[#26343b]"
-          >
+      <div className="flex flex-col ">
+        <div className="flex flex-col">
+          <input
+            type="email"
+            placeholder="Email"
+            className="m-1 p-2 px-[auto]  focus:shadow-md focus:outline-none"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            className="focus: m-1 p-2  focus:shadow-md focus:outline-none "
+          />
+        </div>
+        <div className="mx-2 flex justify-end">
+          <small className="cursor-pointer text-[#26343b]">
             {" "}
             <a>Forgot password?</a>{" "}
-          </Typography>
+          </small>
+          <hr className="my-5" />
         </div>
-        <Divider className="my-5" />
-        <div className="font-Roboto flex items-end justify-end">
-          <Button
-            variant="text"
-            className="m-6 bg-[#9DD189]  text-[#26343b] hover:bg-[#6FBD52]"
-          >
-            Login
-          </Button>
-        </div>
-        <Divider />
+        <button className="mt-12 rounded-md bg-[#9DD189] p-2 text-[#26343b] hover:bg-[#6FBD52] focus:outline-none">
+          Login
+        </button>
       </div>
     </div>
   );
