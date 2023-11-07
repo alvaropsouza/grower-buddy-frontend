@@ -3,6 +3,8 @@ import React, { useState, type FormEvent } from "react";
 import Image from "next/image";
 import { loginUser } from "../../services/User/UserService";
 import { useRouter } from "next/navigation";
+import LoginButton from "~/components/ui/Buttons";
+import Spinner from "~/components/ui/Spinner";
 
 export default function LoginForm() {
   const router = useRouter();
@@ -12,7 +14,9 @@ export default function LoginForm() {
     password: "",
   });
 
-  const handleChange = (e: { target: { value: unknown; name: string } }) => {
+  const [loginButton, setLoginButton] = useState(LoginButton);
+
+  const handleChange = (e: { target: { value: string; name: string } }) => {
     const { value } = e.target;
     setData({
       ...loginData,
@@ -22,12 +26,15 @@ export default function LoginForm() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setLoginButton(<Spinner />);
     const { password, email } = loginData;
 
     const { status } = await loginUser({ password, email });
 
     if (status === 200) {
       router.push("/dashboard");
+    } else {
+      setLoginButton(loginButton);
     }
   };
   return (
@@ -72,12 +79,7 @@ export default function LoginForm() {
             </small>
             <hr className="my-5" />
           </div>
-          <button
-            type="submit"
-            className="mt-12 rounded-md bg-[#9DD189] p-2 text-[#26343b] hover:bg-[#6FBD52] focus:outline-none"
-          >
-            Login
-          </button>
+          {loginButton}
         </div>
       </form>
     </div>
