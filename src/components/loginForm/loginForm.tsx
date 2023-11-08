@@ -3,8 +3,9 @@ import React, { useState, type FormEvent } from "react";
 import Image from "next/image";
 import { loginUser } from "../../services/User/UserService";
 import { useRouter } from "next/navigation";
-import LoginButton from "~/components/ui/Buttons";
+import { LoginButton } from "~/components/ui/Buttons";
 import Spinner from "~/components/ui/Spinner";
+import { Divider } from "@chakra-ui/react";
 
 export default function LoginForm() {
   const router = useRouter();
@@ -38,22 +39,22 @@ export default function LoginForm() {
     }
   };
   return (
-    <div>
+    <div className="min-w-0 rounded-md bg-[#f9f9f9] p-6">
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col items-center justify-center rounded-md bg-[#f9f9f9] p-8 shadow-lg"
+        className="flex flex-col items-center justify-center"
       >
         <Image
           src="/logo.png"
           alt=""
-          width={260}
+          width={240}
           height={0}
           style={{
             height: "auto",
           }}
           className="mx-10 mb-12 mt-5 flex select-none rounded-lg"
         />
-        <div className="flex flex-col ">
+        <div className="flex w-[90%] flex-col">
           <div className="flex flex-col">
             <input
               type="email"
@@ -79,7 +80,21 @@ export default function LoginForm() {
             </small>
             <hr className="my-5" />
           </div>
+        </div>
+        <div className="flex flex-col items-center justify-center">
           {loginButton}
+          <Divider className="m-4" />
+
+          <Image
+            src="/web_light_rd_SI.svg"
+            alt=""
+            width={0}
+            height={40}
+            style={{
+              width: "auto",
+            }}
+            className=""
+          />
         </div>
       </form>
     </div>
