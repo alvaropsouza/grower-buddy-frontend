@@ -1,5 +1,6 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import LoginForm from "~/components/login-form/loginForm";
+import SignupForm from "~/components/signup-form/signupForm";
 
 export default function LoginSignupForm() {
   return (
@@ -8,7 +9,7 @@ export default function LoginSignupForm() {
       size="md"
       className="items-center rounded-md bg-[#f9f9f9]"
     >
-      <TabList>
+      <TabList className="text-[#26343b]">
         <Tab>Login</Tab>
         <Tab>Signup</Tab>
       </TabList>
@@ -18,10 +19,7 @@ export default function LoginSignupForm() {
           <LoginForm />
         </TabPanel>
         <TabPanel>
-          <LoginForm />
-        </TabPanel>
-        <TabPanel>
-          <LoginForm />
+          <SignupForm />
         </TabPanel>
       </TabPanels>
     </Tabs>
