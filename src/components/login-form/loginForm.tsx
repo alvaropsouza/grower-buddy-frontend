@@ -75,7 +75,6 @@ export default function LoginForm() {
               {" "}
               <a>Forgot password?</a>{" "}
             </small>
-            <hr className="my-5" />
           </div>
         </div>
         <div className="flex flex-col items-center justify-center">
