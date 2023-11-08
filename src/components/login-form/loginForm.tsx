@@ -58,6 +58,7 @@ export default function LoginForm() {
               className="m-1 p-2 px-[auto]  focus:shadow-md focus:outline-none"
               value={loginData.email}
               onChange={handleChange}
+              autoComplete="true"
             />
             <input
               type="password"
@@ -66,6 +67,7 @@ export default function LoginForm() {
               className="focus: m-1 p-2  focus:shadow-md focus:outline-none"
               value={loginData.password}
               onChange={handleChange}
+              autoComplete="true"
             />
           </div>
           <div className="mx-2 flex justify-end">
