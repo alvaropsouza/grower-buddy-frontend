@@ -1,10 +1,9 @@
 import React, { useState, type FormEvent } from "react";
-import Image from "next/image";
 import { loginUser } from "../../services/User/UserService";
 import { useRouter } from "next/navigation";
 import { LoginButton } from "~/components/ui/Buttons";
 import Spinner from "~/components/ui/Spinner";
-import { Divider } from "@chakra-ui/react";
+import { Divider, Image } from "@chakra-ui/react";
 
 export default function LoginForm() {
   const router = useRouter();
@@ -46,11 +45,8 @@ export default function LoginForm() {
         <Image
           src="/logo.png"
           alt=""
-          width={240}
-          height={0}
-          style={{
-            height: "auto",
-          }}
+          boxSize={100}
+          width={"auto"}
           className="mb-12 flex select-none rounded-lg"
         />
         <div className="flex w-[90%] flex-col">
@@ -87,11 +83,8 @@ export default function LoginForm() {
           <Image
             src="/web_light_rd_SI.svg"
             alt=""
-            width={0}
-            height={40}
-            style={{
-              width: "auto",
-            }}
+            boxSize="40px"
+            width="auto"
             className=""
           />
         </div>
