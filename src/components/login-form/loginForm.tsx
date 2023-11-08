@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/unbound-method */
 import React, { useState, type FormEvent } from "react";
 import Image from "next/image";
 import { loginUser } from "../../services/User/UserService";
@@ -39,7 +38,7 @@ export default function LoginForm() {
     }
   };
   return (
-    <div className="min-w-0 rounded-md bg-[#f9f9f9] p-6">
+    <div className="rounded-md bg-[#f9f9f9] p-5">
       <form
         onSubmit={handleSubmit}
         className="flex flex-col items-center justify-center"
@@ -52,7 +51,7 @@ export default function LoginForm() {
           style={{
             height: "auto",
           }}
-          className="mx-10 mb-12 mt-5 flex select-none rounded-lg"
+          className="mb-12 flex select-none rounded-lg"
         />
         <div className="flex w-[90%] flex-col">
           <div className="flex flex-col">

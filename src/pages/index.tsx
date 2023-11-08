@@ -1,6 +1,5 @@
 import Head from "next/head";
-import LoginForm from "~/components/loginForm/loginForm";
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+import LoginSignupForm from "~/components/login-signup-form/LoginSignupForm";
 
 export default function Home() {
   return (
@@ -12,28 +11,7 @@ export default function Home() {
       </Head>
 
       <main className="min-w-screen flex min-h-screen flex-col items-center justify-center bg-[#26343b]	">
-        <Tabs
-          align="center"
-          size="md"
-          className="items-center rounded-md bg-[#f9f9f9]"
-        >
-          <TabList>
-            <Tab>Login</Tab>
-            <Tab>Signup</Tab>
-          </TabList>
-
-          <TabPanels>
-            <TabPanel>
-              <LoginForm />
-            </TabPanel>
-            <TabPanel>
-              <LoginForm />
-            </TabPanel>
-            <TabPanel>
-              <LoginForm />
-            </TabPanel>
-          </TabPanels>
-        </Tabs>
+        <LoginSignupForm />
       </main>
     </>
   );
