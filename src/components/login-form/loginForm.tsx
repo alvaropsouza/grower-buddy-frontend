@@ -47,7 +47,7 @@ export default function LoginForm() {
           alt=""
           boxSize={100}
           width={"auto"}
-          className="mb-12 flex select-none rounded-lg"
+          className="mb-8 flex select-none rounded-lg"
         />
         <div className="flex w-[90%] flex-col">
           <div className="flex flex-col">
@@ -70,7 +70,7 @@ export default function LoginForm() {
               autoComplete="true"
             />
           </div>
-          <div className="mx-2 flex justify-end">
+          <div className="flex justify-end">
             <small className="cursor-pointer text-[#26343b]">
               {" "}
               <a>Forgot password?</a>{" "}

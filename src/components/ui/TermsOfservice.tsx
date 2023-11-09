@@ -16,7 +16,7 @@ export default function TermsOfServiceModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <div onClick={onOpen} className="mx-2 flex">
+      <div onClick={onOpen} className="flex">
         <TermsButton />
       </div>
 

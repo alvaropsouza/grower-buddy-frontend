@@ -7,14 +7,14 @@ export default function LoginSignupForm() {
     <Tabs
       align="center"
       size="md"
-      className="items-center rounded-md bg-[#f9f9f9]"
+      className="items-center rounded-md bg-[#f9f9f9] "
     >
       <TabList className="text-[#26343b]">
         <Tab>Login</Tab>
         <Tab>Signup</Tab>
       </TabList>
 
-      <TabPanels>
+      <TabPanels className="">
         <TabPanel>
           <LoginForm />
         </TabPanel>

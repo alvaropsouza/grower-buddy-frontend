@@ -50,7 +50,7 @@ export default function SignupForm() {
           alt=""
           boxSize={100}
           width={"auto"}
-          className="mb-12 flex select-none rounded-md"
+          className="mb-8 flex select-none rounded-md"
         />
         <div className="flex w-[60%] flex-col">
           <div className="flex flex-col">
@@ -74,6 +74,7 @@ export default function SignupForm() {
                 autoComplete="true"
               />
             </div>
+
             <input
               type="email"
               name="email"
@@ -99,7 +100,7 @@ export default function SignupForm() {
         </div>
       </form>
       <Divider className="my-5" />
-      <div className="mx-2 flex justify-around align-bottom">
+      <div className="m-0 flex justify-around align-bottom">
         <TermsOfServiceModal />
         <div className="flex flex-col text-left">
           <Checkbox className="p-1">
