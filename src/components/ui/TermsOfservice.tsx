@@ -25,7 +25,20 @@ export default function TermsOfServiceModal() {
         <ModalContent>
           <ModalHeader>Terms of Service</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>asdasfasfsfasf</ModalBody>
+          <ModalBody>
+            <small>
+              <b>Last Updated:</b> November 5, 2023
+              <p>
+                <small>
+                  These Terms of Service govern your use of the Grower Buddy
+                  website // (the Service), which is provided by Grower Buddy.
+                  By accessing or using the Service, // you agree to comply with
+                  and be bound by these Terms. If you do not agree with these
+                  Terms, // please do not use the Service.
+                </small>
+              </p>
+            </small>
+          </ModalBody>
           <ModalFooter>
             <Button onClick={onClose}>Close</Button>
           </ModalFooter>
@@ -35,56 +48,8 @@ export default function TermsOfServiceModal() {
   );
 }
 
-// export default function TermsOfServiceModal() {
-//   const [open, setOpen] = React.useState(false);
-
-//   const handleClickOpen = () => {
-//     setOpen(true);
-//   };
-//   const handleClose = () => {
-//     setOpen(false);
-//   };
-
-//   return (
-//     <>
-//       <Button
-//         variant="outlined"
-//         className="border-[#9DD189] text-[#26343b] hover:border-[#9DD189]"
-//         onClick={handleClickOpen}
-//       >
-//         <HistoryEduOutlinedIcon className="m-1" />
-//         View Terms
-//       </Button>
-//       <BootstrapDialog
-//         onClose={handleClose}
-//         aria-labelledby="customized-dialog-title"
-//         open={open}
-//       >
-//         <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
-//           Terms of service
-//         </DialogTitle>
-//         <IconButton
-//           aria-label="close"
-//           onClick={handleClose}
-//           sx={{
-//             position: "absolute",
-//             right: 8,
-//             top: 8,
-//             color: (theme) => theme.palette.grey[500],
-//           }}
-//         >
-//           <CloseIcon />
-//         </IconButton>
-//         <DialogContent dividers>
-//           <small>
-//             <b>Last Updated:</b> November 5, 2023
-//           </small>
-
 //           {genModalParagraph({
-//             text: `These Terms of Service govern your use of the Grower Buddy website
-//             (the Service), which is provided by Grower Buddy. By accessing or using the Service,
-//             you agree to comply with and be bound by these Terms. If you do not agree with these Terms,
-//             please do not use the Service.`,
+//             text: ``,
 //           })}
 //           <small>
 //             <b>1. Acceptance of Terms</b>
