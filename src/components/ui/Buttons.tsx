@@ -19,7 +19,7 @@ export function TermsButton() {
       <Tooltip label="Open terms of use">
         <button
           type="submit"
-          className="my-auto h-fit rounded-md bg-[#e0e2c0] p-3 text-[#26343b] hover:bg-[#e0e2c098]"
+          className="mx-3 my-auto h-fit rounded-md bg-[#e0e2c0] p-3 text-[#26343b] hover:bg-[#e0e2c098]"
         >
           <HistoryEduOutlinedIcon />
         </button>

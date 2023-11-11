@@ -20,7 +20,7 @@ export default function TermsOfServiceModal() {
         <TermsButton />
       </div>
 
-      <Modal onClose={onClose} isOpen={isOpen} isCentered>
+      <Modal onClose={onClose} isOpen={isOpen}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Terms of Service</ModalHeader>

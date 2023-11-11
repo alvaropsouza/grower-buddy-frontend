@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { FormButton } from "~/components/ui/Buttons";
 import Spinner from "~/components/ui/Spinner";
 import { Divider, Image } from "@chakra-ui/react";
+import { Tooltip } from "@chakra-ui/react";
 
 export default function LoginForm() {
   const router = useRouter();
@@ -30,26 +31,32 @@ export default function LoginForm() {
 
     const { status } = await loginUser({ password, email });
 
-    if (status === 200) {
-      router.push("/dashboard");
-    } else {
-      setLoginButton(loginButton);
+    switch (status) {
+      case 200:
+        router.push("/dashboard");
+        break;
+
+      default:
+        setLoginButton(loginButton);
+        break;
     }
   };
   return (
-    <div className="rounded-md bg-[#f9f9f9] p-5">
+    <div>
       <form
         onSubmit={handleSubmit}
         className="flex flex-col items-center justify-center"
       >
-        <Image
-          src="/logo.png"
-          alt=""
-          boxSize={100}
-          width={"auto"}
-          className="mb-8 flex select-none rounded-lg"
-        />
         <div className="flex w-[90%] flex-col">
+          <div className="p-6">
+            <Image
+              src="/logo.png"
+              alt="grower buddy logo"
+              boxSize={14}
+              width={"auto"}
+              className="flex select-none rounded-full"
+            />
+          </div>
           <div className="flex flex-col">
             <input
               type="email"
@@ -78,15 +85,20 @@ export default function LoginForm() {
         </div>
         <div className="flex flex-col items-center justify-center">
           {loginButton}
-          <Divider className="m-4" />
+          <Divider className="m-3" />
 
-          <Image
-            src="/web_light_rd_SI.svg"
-            alt=""
-            boxSize="40px"
-            width="auto"
-            className=""
-          />
+          <Tooltip
+            label="Feature under construction 🚧"
+            placement="bottom-start"
+          >
+            <Image
+              src="/web_light_rd_SI.svg"
+              alt="Signin with google"
+              boxSize="40px"
+              width="auto"
+              className="m-2 grayscale hover:cursor-not-allowed"
+            />
+          </Tooltip>
         </div>
       </form>
     </div>
