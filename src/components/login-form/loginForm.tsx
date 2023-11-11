@@ -1,7 +1,7 @@
 import React, { useState, type FormEvent } from "react";
 import { loginUser } from "../../services/User/UserService";
 import { useRouter } from "next/navigation";
-import { LoginButton } from "~/components/ui/Buttons";
+import { FormButton } from "~/components/ui/Buttons";
 import Spinner from "~/components/ui/Spinner";
 import { Divider, Image } from "@chakra-ui/react";
 
@@ -13,7 +13,7 @@ export default function LoginForm() {
     password: "",
   });
 
-  const [loginButton, setLoginButton] = useState(LoginButton);
+  const [loginButton, setLoginButton] = useState(FormButton({ text: "Login" }));
 
   const handleChange = (e: { target: { value: string; name: string } }) => {
     const { value } = e.target;
@@ -72,8 +72,7 @@ export default function LoginForm() {
           </div>
           <div className="flex justify-end">
             <small className="cursor-pointer text-[#26343b]">
-              {" "}
-              <a>Forgot password?</a>{" "}
+              <a>Forgot password?</a>
             </small>
           </div>
         </div>

@@ -1,24 +1,14 @@
 import HistoryEduOutlinedIcon from "@mui/icons-material/HistoryEduOutlined";
 import { Tooltip } from "@chakra-ui/react";
 
-export function LoginButton() {
+export function FormButton(props: { text: string }) {
+  const { text } = props;
   return (
     <button
       type="submit"
-      className="mt-8 rounded-md bg-[#9DD189] p-2 px-9 text-[#26343b] hover:bg-[#6FBD52] focus:outline-none"
+      className="mt-8 rounded-md bg-[#9DD189] p-2 px-9 font-medium text-[#26343b] hover:bg-[#6FBD52] focus:outline-none"
     >
-      Login
-    </button>
-  );
-}
-
-export function SignupButton() {
-  return (
-    <button
-      type="submit"
-      className="mt-4 rounded-md bg-[#9DD189] p-2 px-9 text-[#26343b] hover:bg-[#6FBD52] focus:outline-none"
-    >
-      Signup
+      {text}
     </button>
   );
 }

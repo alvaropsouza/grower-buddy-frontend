@@ -1,7 +1,7 @@
 import React, { useState, type FormEvent } from "react";
 import { loginUser } from "../../services/User/UserService";
 import { useRouter } from "next/navigation";
-import { SignupButton } from "~/components/ui/Buttons";
+import { FormButton } from "~/components/ui/Buttons";
 import Spinner from "~/components/ui/Spinner";
 import { Divider, Image, Checkbox } from "@chakra-ui/react";
 import TermsOfServiceModal from "~/components/ui/TermsOfservice";
@@ -16,7 +16,9 @@ export default function SignupForm() {
     lastName: "",
   });
 
-  const [signupButton, setsignupButton] = useState(SignupButton);
+  const [signupButton, setsignupButton] = useState(
+    FormButton({ text: "Signup" }),
+  );
 
   const handleChange = (e: { target: { value: string; name: string } }) => {
     const { value } = e.target;
