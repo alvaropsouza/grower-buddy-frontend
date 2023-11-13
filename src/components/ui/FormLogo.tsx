@@ -2,7 +2,7 @@ import { Image } from "@chakra-ui/react";
 
 export default function FormLogo() {
   return (
-    <div className="flex select-none p-5">
+    <div className="flex select-none items-center justify-center p-5">
       <Image
         src="/logo.png"
         alt="grower buddy logo"

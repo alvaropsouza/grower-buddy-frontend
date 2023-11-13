@@ -35,7 +35,7 @@ export function SigninWithGoogleButton() {
       <Image
         src="/web_light_rd_SI.svg"
         alt="Signin with google"
-        boxSize="40px"
+        boxSize="38px"
         width="auto"
         className="m-2 grayscale hover:cursor-not-allowed"
       />

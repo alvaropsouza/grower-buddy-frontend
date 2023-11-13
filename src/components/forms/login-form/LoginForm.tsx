@@ -43,38 +43,40 @@ export default function LoginForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="flex w-[90%] flex-col items-center justify-center">
-        <FormLogo />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          className="m-1 p-2 px-[auto]  focus:shadow-md focus:outline-none"
-          value={loginData.email}
-          onChange={handleChange}
-          autoComplete="true"
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          name="password"
-          className="focus: m-1 p-2  focus:shadow-md focus:outline-none"
-          value={loginData.password}
-          onChange={handleChange}
-          autoComplete="true"
-        />
-        <div className="ml-auto mr-8 flex ">
-          <small className="cursor-pointer text-[#26343b]">
-            <a>Forgot password?</a>
-          </small>
+    <>
+      <FormLogo />
+      <form onSubmit={handleSubmit}>
+        <div className="flex w-[90%] flex-col items-center justify-center">
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            className="m-1 p-2 px-[auto]  focus:shadow-md focus:outline-none"
+            value={loginData.email}
+            onChange={handleChange}
+            autoComplete="true"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            className="focus: m-1 p-2  focus:shadow-md focus:outline-none"
+            value={loginData.password}
+            onChange={handleChange}
+            autoComplete="true"
+          />
+          <div className="ml-auto mr-8 flex ">
+            <small className="cursor-pointer text-[#26343b]">
+              <a>Forgot password?</a>
+            </small>
+          </div>
         </div>
-      </div>
-      <div className="flex flex-col items-center justify-center">
-        {loginButton}
-        <Divider className="m-3" />
-        <SigninWithGoogleButton />
-      </div>
-    </form>
+        <div className="flex flex-col items-center justify-center">
+          {loginButton}
+          <Divider className="m-3" />
+          <SigninWithGoogleButton />
+        </div>
+      </form>
+    </>
   );
 }
