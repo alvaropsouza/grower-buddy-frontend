@@ -1,9 +1,10 @@
 import React, { useState, type FormEvent } from "react";
-import { loginUser } from "../../services/User/UserService";
+import { loginUser } from "../../../services/User/UserService";
 import { useRouter } from "next/navigation";
 import { FormButton } from "~/components/ui/Buttons";
 import Spinner from "~/components/ui/Spinner";
-import { Divider, Image, Checkbox } from "@chakra-ui/react";
+import { Divider, Checkbox } from "@chakra-ui/react";
+import FormLogo from "~/components/ui/FormLogo";
 import TermsOfServiceModal from "~/components/ui/TermsOfservice";
 
 export default function SignupForm() {
@@ -44,19 +45,12 @@ export default function SignupForm() {
         break;
     }
   };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="rounded-md">
-        <div className="flex w-[90%] flex-col">
-          <div className="p-6">
-            <Image
-              src="/logo.png"
-              alt=""
-              boxSize={14}
-              width={"auto"}
-              className="flex select-none rounded-full"
-            />
-          </div>
+    <>
+      <FormLogo />
+      <form onSubmit={handleSubmit}>
+        <div className="flex w-[90%] flex-col items-center justify-center">
           <input
             type="text"
             name="name"
@@ -65,6 +59,7 @@ export default function SignupForm() {
             value={signupData.name}
             onChange={handleChange}
             autoComplete="true"
+            required
           />
           <input
             type="email"
@@ -74,6 +69,7 @@ export default function SignupForm() {
             value={signupData.email}
             onChange={handleChange}
             autoComplete="true"
+            required
           />
           <input
             type="password"
@@ -83,6 +79,7 @@ export default function SignupForm() {
             value={signupData.password}
             onChange={handleChange}
             autoComplete="true"
+            required
           />
         </div>
         <div className="flex flex-col items-center justify-center">
@@ -92,7 +89,7 @@ export default function SignupForm() {
         <div className="flex justify-around align-bottom">
           <TermsOfServiceModal />
           <div className="m-2 flex flex-col text-left">
-            <Checkbox className="p-1">
+            <Checkbox className="p-1" required>
               <small>I have read and agree with terms of use</small>
             </Checkbox>
 
@@ -101,7 +98,7 @@ export default function SignupForm() {
             </Checkbox>
           </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </>
   );
 }

@@ -1,5 +1,6 @@
 import HistoryEduOutlinedIcon from "@mui/icons-material/HistoryEduOutlined";
 import { Tooltip } from "@chakra-ui/react";
+import { Image } from "@chakra-ui/react";
 
 export function FormButton(props: { text: string }) {
   const { text } = props;
@@ -18,12 +19,26 @@ export function TermsButton() {
     <>
       <Tooltip label="Open terms of use">
         <button
-          type="submit"
-          className="mx-3 my-auto h-fit rounded-md bg-[#e0e2c0] p-3 text-[#26343b] hover:bg-[#e0e2c098]"
+          type="button"
+          className="mx-2 my-auto h-fit rounded-md bg-[#e0e2c0] p-3 text-[#26343b] hover:bg-[#e0e2c098]"
         >
           <HistoryEduOutlinedIcon />
         </button>
       </Tooltip>
     </>
+  );
+}
+
+export function SigninWithGoogleButton() {
+  return (
+    <Tooltip label="Feature under construction 🚧" placement="bottom-start">
+      <Image
+        src="/web_light_rd_SI.svg"
+        alt="Signin with google"
+        boxSize="38px"
+        width="auto"
+        className="m-2 grayscale hover:cursor-not-allowed"
+      />
+    </Tooltip>
   );
 }
