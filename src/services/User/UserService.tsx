@@ -14,7 +14,7 @@ type RegisterUserType = {
   name: string;
 };
 
-export const loginUser = async (
+export const LoginUser = async (
   userData: LoginUserType,
 ): Promise<{ status: number }> => {
   try {
@@ -24,11 +24,13 @@ export const loginUser = async (
     );
 
     const { status } = response;
+    console.log(status);
 
     toast("Logged in", { type: "success", theme });
 
     return { status };
   } catch (err: any) {
+    console.log(err);
     toast("Invalid credentials", { type: "error", theme });
 
     return { status: Number(err.request.status) };
@@ -36,22 +38,29 @@ export const loginUser = async (
 };
 
 export const SignupUser = async (
-  userData: LoginUserType,
+  userData: RegisterUserType,
 ): Promise<{ status: number }> => {
   try {
     const response = await axios.post(
-      "https://users-ms-production.up.railway.app/user/login",
+      "https://users-ms-production.up.railway.app/user/signup",
       userData,
     );
 
     const { status } = response;
 
-    toast("Logged in", { type: "success", theme });
+    toast(
+      "Succesfully registered, we sent you a email to confirm your account",
+      { type: "success", theme },
+    );
 
     return { status };
   } catch (err: any) {
-    toast("Invalid credentials", { type: "error", theme });
+    const status = Number(err.request.status);
 
-    return { status: Number(err.request.status) };
+    status === 400
+      ? toast("Invalid user data", { type: "warning", theme })
+      : toast("Internal server error", { type: "error", theme });
+
+    return { status };
   }
 };

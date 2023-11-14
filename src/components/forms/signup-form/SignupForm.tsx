@@ -1,5 +1,5 @@
 import React, { useState, type FormEvent } from "react";
-import { loginUser } from "../../../services/User/UserService";
+import { SignupUser } from "../../../services/User/UserService";
 import { useRouter } from "next/navigation";
 import { FormButton } from "~/components/ui/Buttons";
 import Spinner from "~/components/ui/Spinner";
@@ -31,19 +31,11 @@ export default function SignupForm() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setsignupButton(<Spinner />);
-    const { password, email } = signupData;
+    const { password, email, name } = signupData;
 
-    const { status } = await loginUser({ password, email });
+    await SignupUser({ password, email, name });
 
-    switch (status) {
-      case 200:
-        router.push("/dashboard");
-        break;
-
-      default:
-        setsignupButton(signupButton);
-        break;
-    }
+    setsignupButton(signupButton);
   };
 
   return (

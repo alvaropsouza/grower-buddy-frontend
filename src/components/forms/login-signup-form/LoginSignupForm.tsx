@@ -8,10 +8,12 @@ import {
 } from "@chakra-ui/react";
 import LoginForm from "~/components/forms/login-form/LoginForm";
 import SignupForm from "~/components/forms/signup-form/SignupForm";
+import { animated } from "@react-spring/web";
 
 export default function LoginSignupForm() {
   return (
     <Tabs
+      isLazy
       align="center"
       size="md"
       variant="enclosed"
