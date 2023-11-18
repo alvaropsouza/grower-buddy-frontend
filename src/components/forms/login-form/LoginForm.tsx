@@ -55,6 +55,7 @@ export default function LoginForm() {
             value={loginData.email}
             onChange={handleChange}
             autoComplete="true"
+            required
           />
           <input
             type="password"
@@ -64,6 +65,7 @@ export default function LoginForm() {
             value={loginData.password}
             onChange={handleChange}
             autoComplete="true"
+            required
           />
           <div className="ml-auto mr-8 flex ">
             <small className="cursor-pointer text-[#26343b]">
