@@ -9,7 +9,7 @@ import {
 } from "~/components/ui";
 import { Divider, Link } from "@chakra-ui/react";
 
-export function LoginForm() {
+function LoginForm() {
   const router = useRouter();
 
   const [loginData, setData] = useState({
@@ -85,3 +85,5 @@ export function LoginForm() {
     </>
   );
 }
+
+export { LoginForm };
