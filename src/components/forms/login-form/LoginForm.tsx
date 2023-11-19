@@ -1,5 +1,5 @@
 import React, { useState, type FormEvent } from "react";
-import { loginUser } from "../../../services/User/UserService";
+import { LoginUser } from "../../../services/User/UserService";
 import { useRouter } from "next/navigation";
 import { FormButton, SigninWithGoogleButton } from "~/components/ui/Buttons";
 import Spinner from "~/components/ui/Spinner";
@@ -29,7 +29,7 @@ export default function LoginForm() {
     setLoginButton(<Spinner />);
     const { password, email } = loginData;
 
-    const { status } = await loginUser({ password, email });
+    const { status } = await LoginUser({ password, email });
 
     switch (status) {
       case 200:
@@ -55,6 +55,7 @@ export default function LoginForm() {
             value={loginData.email}
             onChange={handleChange}
             autoComplete="true"
+            required
           />
           <input
             type="password"
@@ -64,6 +65,7 @@ export default function LoginForm() {
             value={loginData.password}
             onChange={handleChange}
             autoComplete="true"
+            required
           />
           <div className="ml-auto mr-8 flex ">
             <small className="cursor-pointer text-[#26343b]">

@@ -1,57 +1,50 @@
 import axios from "axios";
 import { toast } from "react-toastify";
+import { handleLoginError, handleSignupError } from "./ErrorHandler";
 
 const theme = "dark";
 
-type LoginUserType = {
+type UserType = {
   email: string;
   password: string;
 };
 
 type RegisterUserType = {
-  email: string;
-  password: string;
   name: string;
-};
+} & UserType;
 
-export const loginUser = async (
-  userData: LoginUserType,
-): Promise<{ status: number }> => {
+const baseURL = "https://users-ms-production.up.railway.app/user/";
+
+const loginUserRequest = async (userData: UserType) => {
   try {
-    const response = await axios.post(
-      "https://users-ms-production.up.railway.app/user/login",
-      userData,
-    );
-
+    const response = await axios.post(`${baseURL}login`, userData);
     const { status } = response;
 
     toast("Logged in", { type: "success", theme });
 
     return { status };
   } catch (err: any) {
-    toast("Invalid credentials", { type: "error", theme });
-
-    return { status: Number(err.request.status) };
+    return handleLoginError(err);
   }
 };
 
-export const SignupUser = async (
-  userData: LoginUserType,
-): Promise<{ status: number }> => {
+const signupUserRequest = async (userData: RegisterUserType) => {
   try {
-    const response = await axios.post(
-      "https://users-ms-production.up.railway.app/user/login",
-      userData,
-    );
-
+    const response = await axios.post(`${baseURL}signup`, userData);
     const { status } = response;
 
-    toast("Logged in", { type: "success", theme });
+    toast(
+      "Successfully registered, we sent you an email to confirm your account",
+      {
+        type: "success",
+        theme,
+      },
+    );
 
     return { status };
   } catch (err: any) {
-    toast("Invalid credentials", { type: "error", theme });
-
-    return { status: Number(err.request.status) };
+    handleSignupError(err);
   }
 };
+
+export { loginUserRequest as LoginUser, signupUserRequest as SignupUser };
