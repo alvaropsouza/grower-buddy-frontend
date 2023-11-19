@@ -7,7 +7,7 @@ import {
   FormButton,
   SigninWithGoogleButton,
 } from "~/components/ui";
-import { Divider } from "@chakra-ui/react";
+import { Divider, Link } from "@chakra-ui/react";
 
 export function LoginForm() {
   const router = useRouter();
@@ -70,9 +70,9 @@ export function LoginForm() {
             autoComplete="true"
             required
           />
-          <div className="ml-auto mr-8 flex ">
+          <div className="ml-auto mr-8 flex">
             <small className="cursor-pointer text-[#676d70]">
-              <a>Forgot password?</a>
+              <Link className="hover:no-underline">Forgot password?</Link>
             </small>
           </div>
         </div>
