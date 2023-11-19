@@ -12,7 +12,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 
-export default function TermsOfServiceModal() {
+function TermsOfServiceModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
@@ -176,3 +176,5 @@ export default function TermsOfServiceModal() {
     </>
   );
 }
+
+export { TermsOfServiceModal };

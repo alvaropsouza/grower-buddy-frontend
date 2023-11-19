@@ -1,10 +1,13 @@
 import React, { useState, type FormEvent } from "react";
 import { LoginUser } from "../../../services/User/UserService";
 import { useRouter } from "next/navigation";
-import { FormButton, SigninWithGoogleButton } from "~/components/ui/Buttons";
-import Spinner from "~/components/ui/Spinner";
+import {
+  Spinner,
+  FormLogo,
+  FormButton,
+  SigninWithGoogleButton,
+} from "~/components/ui";
 import { Divider } from "@chakra-ui/react";
-import FormLogo from "~/components/ui/FormLogo";
 
 export function LoginForm() {
   const router = useRouter();

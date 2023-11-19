@@ -1,10 +1,12 @@
 import React, { useState, type FormEvent } from "react";
 import { SignupUser } from "../../../services/User/UserService";
-import { FormButton } from "~/components/ui/Buttons";
-import Spinner from "~/components/ui/Spinner";
+import {
+  Spinner,
+  FormLogo,
+  FormButton,
+  TermsOfServiceModal,
+} from "~/components/ui";
 import { Divider, Checkbox } from "@chakra-ui/react";
-import FormLogo from "~/components/ui/FormLogo";
-import TermsOfServiceModal from "~/components/ui/TermsOfservice";
 
 export function SignupForm() {
   const [signupData, setSignupData] = useState({
