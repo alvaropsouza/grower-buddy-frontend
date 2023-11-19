@@ -71,7 +71,7 @@ export function LoginForm() {
             required
           />
           <div className="ml-auto mr-8 flex ">
-            <small className="cursor-pointer text-[#26343b]">
+            <small className="cursor-pointer text-[#676d70]">
               <a>Forgot password?</a>
             </small>
           </div>
