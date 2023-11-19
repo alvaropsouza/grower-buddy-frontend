@@ -20,7 +20,7 @@ function TermsOfServiceModal() {
         <TermsButton />
       </div>
 
-      <Modal onClose={onClose} isOpen={isOpen}>
+      <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Terms of Service</ModalHeader>
