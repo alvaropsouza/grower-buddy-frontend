@@ -6,7 +6,7 @@ import Spinner from "~/components/ui/Spinner";
 import { Divider } from "@chakra-ui/react";
 import FormLogo from "~/components/ui/FormLogo";
 
-export default function LoginForm() {
+export function LoginForm() {
   const router = useRouter();
 
   const [loginData, setData] = useState({

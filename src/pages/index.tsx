@@ -1,5 +1,5 @@
 import Head from "next/head";
-import LoginSignupForm from "~/components/forms/login-signup-form/LoginSignupForm";
+import { LoginSignupForm } from "~/components/forms";
 import { motion } from "framer-motion";
 
 export default function Home() {

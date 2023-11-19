@@ -6,10 +6,9 @@ import {
   TabPanel,
   TabIndicator,
 } from "@chakra-ui/react";
-import LoginForm from "~/components/forms/login-form/LoginForm";
-import SignupForm from "~/components/forms/signup-form/SignupForm";
+import { LoginForm, SignupForm } from "~/components/forms";
 
-export default function LoginSignupForm() {
+export function LoginSignupForm() {
   return (
     <Tabs
       isLazy
