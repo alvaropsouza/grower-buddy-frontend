@@ -5,8 +5,9 @@ import {
   FormLogo,
   FormButton,
   TermsOfServiceModal,
+  Divider,
 } from "~/components/ui";
-import { Divider, Checkbox } from "@chakra-ui/react";
+import { Checkbox } from "@chakra-ui/react";
 
 export function SignupForm() {
   const [signupData, setSignupData] = useState({
@@ -76,7 +77,7 @@ export function SignupForm() {
         <div className="flex flex-col items-center justify-center">
           {signupButton}
         </div>
-        <Divider className="my-3" />
+        <Divider content="" />
         <div className="flex justify-around align-bottom">
           <TermsOfServiceModal />
           <div className="m-2 flex flex-col text-left">

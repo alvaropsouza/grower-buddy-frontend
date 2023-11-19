@@ -16,14 +16,8 @@ export default function Home() {
 
       <main className="min-w-screen flex min-h-screen flex-col items-center justify-center bg-[#26343b]">
         <motion.div
-          initial={{
-            opacity: 0.5,
-            y: 50,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
+          animate={{ y: [15, 0] }}
+          transition={{ type: "spring", stiffness: 80 }}
         >
           <LoginSignupForm />
         </motion.div>
