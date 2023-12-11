@@ -14,4 +14,18 @@ function FormLogo() {
   );
 }
 
-export { FormLogo };
+function FormLogoNoBg() {
+  return (
+    <div className="flex select-none items-center justify-center">
+      <Image
+        src="/gb-logo-no-background.png"
+        alt="grower buddy logo"
+        boxSize={14}
+        width={"auto"}
+        className="rounded-lg"
+      />
+    </div>
+  );
+}
+
+export { FormLogo, FormLogoNoBg };

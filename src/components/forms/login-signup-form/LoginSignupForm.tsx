@@ -16,7 +16,7 @@ export function LoginSignupForm() {
       size="md"
       variant="enclosed"
       isFitted
-      className="items-center rounded-sm bg-[#f9f9f9]"
+      className="w-[25%] items-center rounded-sm bg-[#f9f9f9]"
     >
       <TabPanels>
         <TabPanel>
