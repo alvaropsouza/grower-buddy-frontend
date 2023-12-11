@@ -2,7 +2,7 @@ import HistoryEduOutlinedIcon from "@mui/icons-material/HistoryEduOutlined";
 import { Tooltip } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
 
-export function FormButton(props: { text: string }) {
+function FormButton(props: { text: string }) {
   const { text } = props;
   return (
     <button
@@ -14,7 +14,7 @@ export function FormButton(props: { text: string }) {
   );
 }
 
-export function TermsButton() {
+function TermsButton() {
   return (
     <>
       <Tooltip label="Open terms of use">
@@ -29,7 +29,7 @@ export function TermsButton() {
   );
 }
 
-export function SigninWithGoogleButton() {
+function SigninWithGoogleButton() {
   return (
     <Tooltip label="Feature under construction 🚧" placement="bottom-start">
       <Image
@@ -42,3 +42,5 @@ export function SigninWithGoogleButton() {
     </Tooltip>
   );
 }
+
+export { FormButton, TermsButton, SigninWithGoogleButton };

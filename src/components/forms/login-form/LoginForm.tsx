@@ -1,12 +1,15 @@
 import React, { useState, type FormEvent } from "react";
 import { LoginUser } from "../../../services/User/UserService";
 import { useRouter } from "next/navigation";
-import { FormButton, SigninWithGoogleButton } from "~/components/ui/Buttons";
-import Spinner from "~/components/ui/Spinner";
-import { Divider } from "@chakra-ui/react";
-import FormLogo from "~/components/ui/FormLogo";
+import {
+  Spinner,
+  FormLogo,
+  FormButton,
+  SigninWithGoogleButton,
+} from "~/components/ui";
+import { Divider, Link } from "@chakra-ui/react";
 
-export default function LoginForm() {
+function LoginForm() {
   const router = useRouter();
 
   const [loginData, setData] = useState({
@@ -67,9 +70,9 @@ export default function LoginForm() {
             autoComplete="true"
             required
           />
-          <div className="ml-auto mr-8 flex ">
-            <small className="cursor-pointer text-[#26343b]">
-              <a>Forgot password?</a>
+          <div className="ml-auto mr-8 flex">
+            <small className="cursor-pointer text-[#676d70]">
+              <Link className="hover:no-underline">Forgot password?</Link>
             </small>
           </div>
         </div>
@@ -82,3 +85,5 @@ export default function LoginForm() {
     </>
   );
 }
+
+export { LoginForm };

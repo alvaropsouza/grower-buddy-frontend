@@ -1,5 +1,6 @@
 import Head from "next/head";
-import LoginSignupForm from "~/components/forms/login-signup-form/LoginSignupForm";
+import { LoginSignupForm } from "~/components/forms";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -14,7 +15,18 @@ export default function Home() {
       </Head>
 
       <main className="min-w-screen flex min-h-screen flex-col items-center justify-center bg-[#26343b]">
-        <LoginSignupForm />
+        <motion.div
+          initial={{
+            opacity: 0.5,
+            y: 50,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+        >
+          <LoginSignupForm />
+        </motion.div>
       </main>
     </>
   );
