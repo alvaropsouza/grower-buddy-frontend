@@ -46,7 +46,7 @@ export function SignupForm() {
           <input
             type="text"
             name="name"
-            placeholder="Name"
+            placeholder="First Name"
             className="m-1 p-2 focus:shadow-md focus:outline-none"
             value={signupData.name}
             onChange={handleChange}

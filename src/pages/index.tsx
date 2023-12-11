@@ -14,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="min-w-screen flex min-h-screen flex-col items-center justify-center bg-[#26343b]">
+      <main className="min-w-screen flex min-h-screen flex-col items-center justify-center bg-[#121212]">
         <motion.div
           animate={{ y: [15, 0] }}
           transition={{ type: "spring", stiffness: 80 }}

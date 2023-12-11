@@ -27,7 +27,7 @@ export function LoginSignupForm() {
         </TabPanel>
       </TabPanels>
 
-      <TabList className="rounded-md bg-[#f2f2f2] text-[#26343b]">
+      <TabList className="rounded-md bg-[#f2f2f2] text-[#121212]">
         <Tab
           _selected={{
             color: "#277a4e",
