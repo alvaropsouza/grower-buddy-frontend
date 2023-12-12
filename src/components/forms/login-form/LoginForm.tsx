@@ -50,7 +50,7 @@ function LoginForm() {
     <>
       <FormLogo />
       <form onSubmit={handleSubmit}>
-        <div className="flex w-[90%] flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center">
           <input
             type="email"
             name="email"
