@@ -6,8 +6,9 @@ import {
   FormLogo,
   FormButton,
   SigninWithGoogleButton,
+  Divider,
 } from "~/components/ui";
-import { Divider, Link } from "@chakra-ui/react";
+import { Link } from "@chakra-ui/react";
 
 function LoginForm() {
   const router = useRouter();
@@ -49,7 +50,7 @@ function LoginForm() {
     <>
       <FormLogo />
       <form onSubmit={handleSubmit}>
-        <div className="flex w-[90%] flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center">
           <input
             type="email"
             name="email"
@@ -78,7 +79,8 @@ function LoginForm() {
         </div>
         <div className="flex flex-col items-center justify-center">
           {loginButton}
-          <Divider className="m-3" />
+
+          <Divider content="or" />
           <SigninWithGoogleButton />
         </div>
       </form>
