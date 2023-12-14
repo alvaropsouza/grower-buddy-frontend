@@ -6,21 +6,21 @@ function FormLogo() {
       <Image
         src="/logo.png"
         alt="grower buddy logo"
-        boxSize={14}
+        boxSize={8}
         width={"auto"}
-        className="rounded-lg"
+        className="w-max rounded-lg"
       />
     </div>
   );
 }
 
-function FormLogoNoBg() {
+function BannerLogo() {
   return (
     <div className="flex select-none items-center justify-center">
       <Image
         src="/gb-logo-no-background.png"
         alt="grower buddy logo"
-        boxSize={14}
+        boxSize={10}
         width={"auto"}
         className="rounded-lg"
       />
@@ -28,4 +28,4 @@ function FormLogoNoBg() {
   );
 }
 
-export { FormLogo, FormLogoNoBg };
+export { FormLogo, BannerLogo };

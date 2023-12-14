@@ -42,7 +42,7 @@ export function SignupForm() {
     <>
       <FormLogo />
       <form onSubmit={handleSubmit}>
-        <div className="flex w-[90%] flex-col items-center justify-center">
+        <div className="flex w-fit flex-col items-center justify-center">
           <input
             type="text"
             name="name"
