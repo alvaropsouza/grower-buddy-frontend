@@ -22,7 +22,6 @@ function BannerLogo() {
         alt="grower buddy logo"
         boxSize={10}
         width={"auto"}
-        className="rounded-lg"
       />
     </div>
   );

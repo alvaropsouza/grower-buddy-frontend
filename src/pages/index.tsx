@@ -10,7 +10,6 @@ import TableChartIcon from "@mui/icons-material/TableChart";
 import PeopleIcon from "@mui/icons-material/People";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
-import { Image } from "@chakra-ui/react";
 
 export default function Home() {
   return (
@@ -28,12 +27,12 @@ export default function Home() {
         animate={{ y: [0, 5] }}
         transition={{ type: "spring", stiffness: 80 }}
       >
-        <div id="banner" className="m-1 flex items-center justify-between">
-          <Link href="">
+        <div id="banner" className="m-2 flex items-center place-content-around">
+          <Link href="" className="flex">
             <BannerLogo />
           </Link>
 
-          <Breadcrumb className="text-[#F9F9F9]">
+          <Breadcrumb className="text-[#F9F9F9] max-md:hidden">
             <BreadcrumbItem isCurrentPage>
               <BreadcrumbLink href="/">Home</BreadcrumbLink>
             </BreadcrumbItem>
@@ -47,34 +46,26 @@ export default function Home() {
             </BreadcrumbItem>
           </Breadcrumb>
 
-          <Link href="/">
-            <PersonOutlinedIcon className="h-12 w-auto text-[#CBE5C1]" />
+          <Link href="/" className="max-md:hidden">
+            <PersonOutlinedIcon className="h-10 w-auto text-[#CBE5C1]" />
           </Link>
         </div>
       </motion.div>
 
-      <div className="flex justify-center overflow-hidden p-16 max-sm:flex-col">
+      <div className="flex justify-center overflow-hidden px-8 pt-12 max-sm:flex-col">
         <div
           id="left-container"
-          className="mx-6 flex basis-8/12 justify-center max-lg:inline-block max-sm:order-last"
+          className="flex h-fit basis-8/12 justify-center px-6 max-lg:flex-col max-sm:order-last"
         >
           <div
             id="left-texts"
             className="mr-6 basis-8/12 select-none max-sm:text-center"
           >
-            <Text
-              fontSize="5xl"
-              color="#F9F9F9"
-              className="font-bold leading-tight max-lg:text-2xl"
-            >
+            <Text color="#F9F9F9" className="text-2xl font-bold leading-tight">
               Grow your plants with Data
             </Text>
 
-            <Text
-              fontSize="xl"
-              color="#D4D3D3"
-              className="font-regular min-w-fit max-lg:text-sm"
-            >
+            <Text className="font-regular mt-2 min-w-fit  text-[#D4D3D3] md:text-xl">
               With Grower Buddy, you'll have a sleek and intuitive platform to
               organize and effortlessly track every aspect of your plant's
               growth.
@@ -84,8 +75,8 @@ export default function Home() {
           {/* Features */}
           <div
             id="features"
-            className="my-4 h-fit w-fit rounded-md border-gray-100 bg-gray-400 bg-opacity-10
-              bg-clip-padding p-1 leading-tight backdrop-blur-sm  backdrop-filter"
+            className="h-fit w-fit rounded-md border-gray-100 bg-gray-400 bg-opacity-10 bg-clip-padding
+              p-1 leading-tight backdrop-blur-sm backdrop-filter  max-lg:mt-4"
           >
             <div>
               <div className="m-3 flex text-[#F9F9F9] max-lg:text-sm">
