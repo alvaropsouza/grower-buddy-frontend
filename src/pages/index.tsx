@@ -1,19 +1,17 @@
 import Head from "next/head";
 import { LoginSignupForm } from "~/components/forms";
 import { motion } from "framer-motion";
-import { FormLogoNoBg } from "~/components/ui";
+import { BannerLogo } from "~/components/ui";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import Link from "next/link";
 import { Text } from "@chakra-ui/react";
-import YardIcon from "@mui/icons-material/Yard";
-import TableChartIcon from "@mui/icons-material/TableChart";
-import PeopleIcon from "@mui/icons-material/People";
-import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
+
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
+import { HomeCarousel, Acordion } from "~/components/ui";
 
 export default function Home() {
   return (
-    <div className="min-w-screen min-h-screen overflow-hidden bg-[#121212]">
+    <div className="min-w-screen min-h-screen items-baseline overflow-hidden bg-[#121212] align-baseline ">
       <Head>
         <title>Grower Buddy</title>
         <meta
@@ -27,12 +25,12 @@ export default function Home() {
         animate={{ y: [0, 5] }}
         transition={{ type: "spring", stiffness: 80 }}
       >
-        <div id="banner" className="m-6 flex items-center justify-between">
-          <Link href="">
-            <FormLogoNoBg />
+        <div id="banner" className="m-2 flex place-content-around items-center">
+          <Link href="" className="flex">
+            <BannerLogo />
           </Link>
 
-          <Breadcrumb className="text-[#F9F9F9]">
+          <Breadcrumb className="text-[#F9F9F9] max-md:hidden">
             <BreadcrumbItem isCurrentPage>
               <BreadcrumbLink href="/">Home</BreadcrumbLink>
             </BreadcrumbItem>
@@ -46,79 +44,44 @@ export default function Home() {
             </BreadcrumbItem>
           </Breadcrumb>
 
-          <Link href="/">
-            <PersonOutlinedIcon className="h-12 w-auto text-[#CBE5C1]" />
+          <Link href="/" className="max-md:hidden">
+            <PersonOutlinedIcon className="h-10 w-auto text-[#CBE5C1]" />
           </Link>
         </div>
       </motion.div>
 
-      <div className="m-20 flex justify-center ">
-        <div id="left-container" className="flex basis-8/12">
-          <div id="left-texts" className="mr-6 basis-4/12 select-none">
-            <Text
-              fontSize="5xl"
-              color="#F9F9F9"
-              className="font-medium leading-tight"
-            >
+      <div className="flex justify-center overflow-hidden px-8 pt-12 max-sm:flex-col">
+        <div
+          id="left-container"
+          className="flex h-fit basis-8/12 justify-center px-6 max-lg:flex-col max-sm:order-last"
+        >
+          <div
+            id="left-texts"
+            className="mr-6 basis-8/12 select-none max-sm:text-center"
+          >
+            <Text color="#F9F9F9" className="text-2xl font-bold leading-tight">
               Grow your plants with Data
             </Text>
 
-            <Text fontSize="xl" color="#D4D3D3" className="font-regular">
-              With Grower Buddy, you'll have a sleek and intuitive platform to
-              organize and effortlessly track every aspect of your plant's
-              growth.
+            <Text className="font-regular mt-2 text-[#D4D3D3] md:text-xl">
+              Say goodbye to messy notes! Grower Buddy organizes and tracks your
+              plant's growth effortlessly. From planting to watering, get
+              crystal-clear insights at your fingertips. No more guesswork, just
+              streamlined plant care.
             </Text>
           </div>
 
-          {/* Features */}
-          <div
-            id="features"
-            className="h-fit w-[40%] rounded-md border-gray-100 bg-gray-400 bg-opacity-10 bg-clip-padding
-              leading-tight backdrop-blur-sm backdrop-filter"
-          >
-            <div>
-              <div className="flex p-4 text-[#F9F9F9]">
-                <YardIcon className="mr-2 text-[#6FBD52]" />
-                <Text>
-                  Personalize <b>Profiles</b> for each of your plants
-                </Text>
-              </div>
-              <div className="flex p-4 text-[#F9F9F9]">
-                <TableChartIcon className="mr-2 text-[#6FBD52]" />
-                <Text>
-                  Take <Text as="b">Notes</Text>, save data like: pH levels,
-                  temperature, humidity, fertilizer, soil and all the
-                  <b> grow details </b>you can think of
-                </Text>
-              </div>
-              <div className="mt-4 flex p-4 text-[#F9F9F9]">
-                <Text className="mr-2 text-[#6FBD52]" />
-                <Text className="mr-2 mt-0.5 h-fit select-none rounded-md bg-[#CD56C8] px-1 py-0.5 text-xs font-bold text-[#121212]">
-                  Soon
-                </Text>
-                <Text>
-                  Get exclusive<b> Time Lapses </b>
-                  <AddAPhotoIcon className="text-md m-0.5 p-0.5" />
-                  generated based on your plant profile <b>gallery</b>
-                </Text>
-              </div>
-              <div className="flex p-4 text-[#F9F9F9]">
-                <Text className="mr-2 text-[#6FBD52]" />
-                <Text className="mr-2 mt-0.5 h-fit select-none rounded-md bg-[#CD56C8] px-1 py-0.5 text-xs font-bold text-[#121212]">
-                  Soon
-                </Text>
-                <Text>
-                  <b>
-                    Growers Community
-                    <PeopleIcon className="text-md m-0.5 p-0.5" />
-                  </b>
-                  for sharing knowledge among others
-                </Text>
-              </div>
-            </div>
-          </div>
+          <Acordion />
         </div>
-        <LoginSignupForm />
+        <div className="mb-4 flex justify-center max-sm:order-first">
+          <LoginSignupForm />
+        </div>
+      </div>
+
+      <div className="m-4 flex place-content-around items-center justify-center py-4 max-lg:flex-row max-sm:flex-col">
+        <HomeCarousel image="https://images.unsplash.com/photo-1463320898484-cdee8141c787?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+        <HomeCarousel image="https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+        <HomeCarousel image="https://images.unsplash.com/photo-1582131503261-fca1d1c0589f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
       </div>
     </div>
   );

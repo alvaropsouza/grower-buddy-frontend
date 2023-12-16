@@ -50,7 +50,7 @@ function LoginForm() {
     <>
       <FormLogo />
       <form onSubmit={handleSubmit}>
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex min-w-fit flex-col items-center justify-center">
           <input
             type="email"
             name="email"
@@ -65,7 +65,7 @@ function LoginForm() {
             type="password"
             placeholder="Password"
             name="password"
-            className="focus: m-1 p-2  focus:shadow-md focus:outline-none"
+            className="m-1 p-2  focus:shadow-md focus:outline-none"
             value={loginData.password}
             onChange={handleChange}
             autoComplete="true"
