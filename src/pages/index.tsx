@@ -7,7 +7,7 @@ import Link from "next/link";
 import { Text } from "@chakra-ui/react";
 
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
-import { HomeCarousel, Acordion } from "~/components/ui";
+import { HomeCarousel, Acordion, Divider } from "~/components/ui";
 
 export default function Home() {
   return (
@@ -76,6 +76,10 @@ export default function Home() {
         <div className="mb-4 flex justify-center max-sm:order-first">
           <LoginSignupForm />
         </div>
+      </div>
+
+      <div className="flex justify-center">
+        <Divider content="" />
       </div>
 
       <div className="m-4 flex place-content-around items-center justify-center py-4 max-lg:flex-row max-sm:flex-col">
