@@ -11,6 +11,10 @@ const config = {
     "plugin:@typescript-eslint/stylistic-type-checked",
   ],
   rules: {
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unsafe-argument": "off",
+
     "@typescript-eslint/array-type": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
 
@@ -22,13 +26,13 @@ const config = {
       },
     ],
     "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
-    "@typescript-eslint/no-unsafe-argument": "warn",
     "@typescript-eslint/no-misused-promises": [
       2,
       {
         checksVoidReturn: { attributes: false },
       },
     ],
+    "react/no-unescaped-entities": "off",
   },
 };
 
