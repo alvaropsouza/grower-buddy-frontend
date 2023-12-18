@@ -10,7 +10,7 @@ import { LoginForm, SignupForm } from "~/components/forms";
 
 export function LoginSignupForm() {
   return (
-    <div className="z-auto max-w-fit items-center leading-tight">
+    <div className="max-w-fit items-center leading-tight">
       <Tabs
         align="center"
         size="md"

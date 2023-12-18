@@ -7,7 +7,7 @@ import Link from "next/link";
 import { Text } from "@chakra-ui/react";
 
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
-import { HomeCarousel, Acordion } from "~/components/ui";
+import { HomeCarousel, Acordion, Divider } from "~/components/ui";
 
 export default function Home() {
   return (
@@ -45,7 +45,7 @@ export default function Home() {
           </Breadcrumb>
 
           <Link href="/" className="max-md:hidden">
-            <PersonOutlinedIcon className="h-10 w-auto text-[#CBE5C1]" />
+            <PersonOutlinedIcon className="h-8 w-auto text-[#CBE5C1]" />
           </Link>
         </div>
       </motion.div>
@@ -53,7 +53,7 @@ export default function Home() {
       <div className="flex justify-center overflow-hidden px-8 pt-12 max-sm:flex-col">
         <div
           id="left-container"
-          className="flex h-fit basis-8/12 justify-center px-6 max-lg:flex-col max-sm:order-last"
+          className="flex h-fit basis-8/12 justify-center px-6 max-lg:flex-col max-sm:order-first"
         >
           <div
             id="left-texts"
@@ -73,13 +73,17 @@ export default function Home() {
 
           <Acordion />
         </div>
-        <div className="mb-4 flex justify-center max-sm:order-first">
+        <div className="mb-4 flex justify-center ">
           <LoginSignupForm />
         </div>
       </div>
 
+      <div className="flex justify-center">
+        <Divider content="" />
+      </div>
+
       <div className="m-4 flex place-content-around items-center justify-center py-4 max-lg:flex-row max-sm:flex-col">
-        <HomeCarousel image="https://images.unsplash.com/photo-1463320898484-cdee8141c787?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+        <HomeCarousel image="/dashboard-image.png" />
         <HomeCarousel image="https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
         <HomeCarousel image="https://images.unsplash.com/photo-1582131503261-fca1d1c0589f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
       </div>

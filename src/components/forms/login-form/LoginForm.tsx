@@ -28,28 +28,24 @@ function LoginForm() {
     });
   };
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleLoginSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setLoginButton(<Spinner />);
     const { password, email } = loginData;
 
     const { status } = await LoginUser({ password, email });
 
-    switch (status) {
-      case 200:
-        router.push("/dashboard");
-        break;
-
-      default:
-        setLoginButton(loginButton);
-        break;
+    if (status === 200) {
+      router.push("/dashboard");
+    } else {
+      setLoginButton(loginButton);
     }
   };
 
   return (
     <>
       <FormLogo />
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleLoginSubmit}>
         <div className="flex min-w-fit flex-col items-center justify-center">
           <input
             type="email"
