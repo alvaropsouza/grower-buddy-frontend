@@ -42,7 +42,11 @@ const getItems: (panelStyle: CSSProperties) => CollapseProps["items"] = (
       </div>
     ),
     children: (
-      <p className="text-[#D4D3D3]">Share your plants with community.</p>
+      <p className="text-[#D4D3D3]">
+        Soon, we will have a community where you can engage with other users,
+        exchange tips, compare results, and participate in a{" "}
+        <b>collaborative learning experience</b>.
+      </p>
     ),
     style: panelStyle,
   },
